@@ -1,6 +1,6 @@
 const db = require("../database");
 
-class cities {
+class Cities {
   static retrieveAll(callback) {
     db.query("SELECT city_name from cities ", function (err, res) {
       if (err.error) return callback(err);
@@ -10,7 +10,7 @@ class cities {
 
   static insert(city, callback) {
     db.query(
-      "INSERT INTO cities (city_name) VALUES ($1)",
+      'INSERT INTO cities (city_name) VALUES ($1)',
       [city],
       function (err, res) {
         if (err.error) return callback(err);
@@ -20,4 +20,4 @@ class cities {
   }
 }
 
-module.exports = cities;
+module.exports = Cities;
